@@ -8,12 +8,10 @@ def main():
     print("--- Phase 1: Processing Dataset 1 (Ontonotes) ---")
     
     # 1. Load Dataset 1
-    # We use trust_remote_code=True as seen in your notebook
     print("Loading Ontonotes...")
-    dataset1 = load_dataset("tner/ontonotes5", split="train", trust_remote_code=True)
+    dataset1 = load_dataset("tner/ontonotes5", split="train")
 
-    # 2. Get the Label Mapping (EXACTLY as in the notebook)
-    # The notebook pulls the map from the roberta config
+    # 2. Get the Label Mapping
     print("Fetching label mapping...")
     config = AutoConfig.from_pretrained("tner/roberta-large-ontonotes5")
     id2label = config.id2label
@@ -58,7 +56,7 @@ def main():
     
     # 6. Load Dataset 2 (Your SpaceX/Custom Data)
     # NOTE: Ensure this file is in the same folder
-    ds2_filename = "combined_training_data.json" # Or whatever your SpaceX file is named
+    ds2_filename = "combined_training_data.json" 
     
     if os.path.exists(ds2_filename):
         print(f"Found {ds2_filename}...")

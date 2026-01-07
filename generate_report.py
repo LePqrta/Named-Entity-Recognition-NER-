@@ -86,9 +86,7 @@ def main():
     print("\n" + "="*30)
     print("DETAILED CLASSIFICATION REPORT")
     print("="*30)
-    
-    # Seqeval returns a dictionary for each key, we format it nicely
-    # Get all keys that are not 'overall_...'
+
     categories = sorted([k for k in results.keys() if not k.startswith("overall_")])
     
     print(f"{'ENTITY':<15} {'PRECISION':<10} {'RECALL':<10} {'F1-SCORE':<10} {'NUMBER':<10}")
