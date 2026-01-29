@@ -1,4 +1,4 @@
-#Named Entity Recognition (NER)
+# Named Entity Recognition (NER)
 
 This project implements a Named Entity Recognition (NER) system using fine-tuned transformer models. It combines the OntoNotes dataset with custom SpaceX-related data to train a model capable of identifying entities like persons, organizations, locations, and more.
 
